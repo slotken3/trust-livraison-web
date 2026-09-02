@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ドライバー応募フォーム | Trust Livraison</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0D92F62WRW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0D92F62WRW');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Oswald:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">TRUST <span>LIVRAISON</span></a>
+  <a href="/" class="nav-back">← トップへ戻る</a>
+</nav>
+
+<!-- HERO -->
+<div class="apply-hero">
+  <div class="apply-hero-grid"></div>
+  <div class="apply-hero-inner">
+    <div class="hero-eyebrow">Driver Recruitment — 軽貨物ドライバー募集</div>
+    <h1>一緒に走ろう。<br><span>応募はこちら</span>から。</h1>
+    <p>まずは気軽にご連絡ください。選考のプレッシャーは一切ありません。話を聞くだけでも大歓迎です。</p>
+  </div>
+</div>
+
+<!-- FORM BODY -->
+<div class="apply-body">
+  <div class="apply-inner">
+
+    <!-- フォーム -->
+    <div class="form-card">
+      <h2>📋 応募フォーム</h2>
+
+      <form id="applyForm" method="post" action="/freecgi/FormMail/index.cgi" accept-charset="EUC-JP">
+
+        <!-- CGI システム設定 -->
+        <input type="hidden" name="_profile_" value="Contact">
+        <input type="hidden" name="_css_url_" value="/FormMail/Contact/default.css">
+
+        <!-- CGI フィールド定義 -->
+        <input type="hidden" name="_label_" value="name:お名前:required">
+        <input type="hidden" name="_label_" value="tel:電話番号:required">
+        <input type="hidden" name="_label_" value="email:メールアドレス:required">
+        <input type="hidden" name="_label_" value="comment:応募内容詳細">
+
+        <!-- 確認画面の設定 -->
+        <input type="hidden" name="_conf_enable_" value="1">
+        <input type="hidden" name="_conf_title_" value="応募内容の確認">
+        <input type="hidden" name="_conf_msg_head_" value="下記の内容で送信します。">
+		<input type="hidden" name="_conf_msg_foot_" value="内容をご確認の上、「送信する」ボタンを押してください。修正する場合はブラウザの戻るボタンでお戻りください。入力内容は保持されます。">
+        <input type="hidden" name="_conf_submit_" value="送信する">
+
+        <!-- 完了画面の設定 -->
+        <input type="hidden" name="_comp_title_" value="応募受付完了">
+        <input type="hidden" name="_comp_msg_head_" value="応募を受け付けました。">
+        <input type="hidden" name="_comp_msg_foot_" value="24時間以内に代表よりお電話いたします。080-5010-4929 からおかけしますので、お待ちください。">
+        <input type="hidden" name="_comp_return_text_" value="採用サイトへ戻る">
+        <input type="hidden" name="_comp_return_url_" value="/">
+
+        <!-- お名前 -->
+        <div class="form-group" id="group-name">
+          <label>お名前<span class="required">*</span></label>
+          <input type="text" name="name" placeholder="山田 太郎" autocomplete="name">
+          <div class="field-error">お名前を入力してください</div>
+        </div>
+
+        <!-- 電話番号 -->
+        <div class="form-group" id="group-tel">
+          <label>電話番号<span class="required">*</span></label>
+          <input type="tel" name="tel" placeholder="090-0000-0000" autocomplete="tel">
+          <div class="field-error">電話番号を入力してください</div>
+        </div>
+
+        <!-- メールアドレス -->
+        <div class="form-group" id="group-email">
+          <label>メールアドレス<span class="required">*</span></label>
+          <input type="email" name="email" placeholder="example@email.com" autocomplete="email">
+          <div class="field-error">正しいメールアドレスを入力してください</div>
+        </div>
+
+        <!-- 年齢 -->
+        <div class="form-group" id="group-age">
+          <label>年齢<span class="required">*</span></label>
+          <select name="age" id="ageSelect">
+            <option value="" disabled selected>選択してください</option>
+            <option>18〜19歳</option>
+            <option>20代</option>
+            <option>30代</option>
+            <option>40代</option>
+            <option>50代以上</option>
+          </select>
+          <div class="field-error">年齢を選択してください</div>
+        </div>
+
+        <!-- 運転免許 -->
+        <div class="form-group" id="group-license">
+          <label>普通自動車免許<span class="required">*</span></label>
+          <select name="license" id="licenseSelect">
+            <option value="" disabled selected>選択してください</option>
+            <option>あり（AT限定なし）</option>
+            <option>あり（AT限定）</option>
+            <option>なし（取得予定あり）</option>
+            <option>なし（未定）</option>
+          </select>
+          <div class="field-error">免許の有無を選択してください</div>
+        </div>
+
+        <!-- 軽自動車 -->
+        <div class="form-group" id="group-car">
+          <label>軽自動車の有無<span class="required">*</span></label>
+          <select name="car" id="carSelect">
+            <option value="" disabled selected>選択してください</option>
+            <option>あり</option>
+            <option>なし（調達予定あり）</option>
+            <option>なし（相談したい）</option>
+          </select>
+          <div class="field-error">選択してください</div>
+        </div>
+
+        <!-- 稼働希望 -->
+        <div class="form-group">
+          <label>稼働希望<span class="required">*</span><span class="optional">複数選択可</span></label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" class="workStyle" value="フル稼働（主な仕事として）"> フル稼働（主な仕事として）
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="workStyle" value="副業・ダブルワーク"> 副業・ダブルワーク
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="workStyle" value="週6日でしっかり稼ぎたい"> 週6日でしっかり稼ぎたい
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="workStyle" value="時間帯・日数を相談したい"> 時間帯・日数を相談したい
+            </label>
+          </div>
+        </div>
+
+        <!-- 経験 -->
+        <div class="form-group">
+          <label>宅配・配送の経験<span class="required">*</span></label>
+          <select name="experience" id="experienceSelect">
+            <option value="" disabled selected>選択してください</option>
+            <option>未経験</option>
+            <option>あり（1年未満）</option>
+            <option>あり（1〜3年）</option>
+            <option>あり（3年以上）</option>
+          </select>
+        </div>
+
+        <!-- 希望エリア -->
+        <div class="form-group">
+          <label>希望エリア<span class="optional">任意</span></label>
+          <select name="area" id="areaSelect">
+            <option value="特に希望なし" selected>特に希望なし</option>
+            <option>大田区</option>
+            <option>品川区</option>
+            <option>目黒区</option>
+            <option>港区</option>
+            <option>神奈川県</option>
+            <option>埼玉県</option>
+            <option>千葉県</option>
+            <option>その他・相談したい</option>
+          </select>
+        </div>
+
+        <!-- ご質問・メッセージ（任意） -->
+        <div class="form-group">
+          <label>ご質問・メッセージ<span class="optional">任意</span></label>
+          <textarea name="freecomment" id="freecomment" placeholder="気になること、聞きたいことがあればお気軽にどうぞ。&#10;「話を聞くだけ」でも大歓迎です！"></textarea>
+        </div>
+
+        <!-- CGIに渡す集約フィールド（JS で自動生成） -->
+        <input type="hidden" name="comment" id="commentField">
+
+        <!-- 個人情報同意 -->
+        <div class="agree-box">
+          <label class="checkbox-label" id="group-agree">
+            <input type="checkbox" id="agreeCheck">
+            <span><a href="/#policies" target="_blank">個人情報取扱方針</a>に同意の上、送信します。</span>
+          </label>
+          <div class="field-error" id="agreeError" style="margin-top:8px;">同意が必要です</div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          確認画面へ →
+        </button>
+
+        <div class="form-alt-apply">
+          <span>または</span>
+          <a href="https://noru-works.jp/tokyo/ota-ku/detail-27121" target="_blank">
+            🔍 ノルワークスの求人ページから応募する
+          </a>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- サイドバー -->
+    <aside class="apply-sidebar">
+
+      <div class="sidebar-card">
+        <h3>💰 収入の目安</h3>
+        <div class="sidebar-stat">
+          <div class="sidebar-stat-item">
+            <span class="sidebar-stat-label">1個あたり単価（税込）<br><small style="opacity:.7">開始3か月は160円</small></span>
+            <span class="sidebar-stat-val">165<small>円</small></span>
+          </div>
+          <div class="sidebar-stat-item">
+            <span class="sidebar-stat-label">月収目安（売上）<br><small style="opacity:.7">週休2日・1日130個</small></span>
+            <span class="sidebar-stat-val">47<small>万円</small></span>
+          </div>
+          <div class="sidebar-stat-item">
+            <span class="sidebar-stat-label">手取り目安<br><small style="opacity:.7">経費を引いた金額</small></span>
+            <span class="sidebar-stat-val">37<small>万円</small></span>
+          </div>
+        </div>
+        <p style="font-size:.75rem;line-height:1.7;opacity:.65;margin-top:14px;">
+          手取りはガソリン代・任意保険・車両費を差し引いた目安です。車両をお持ちの方は41万円前後。税金・国民健康保険・年金はご自身でお納めいただきます。
+        </p>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>✅ 応募条件</h3>
+        <div class="sidebar-list">
+          <div class="sidebar-item">普通自動車免許（AT限定可）</div>
+          <div class="sidebar-item">軽貨物車両・黒ナンバー（調達サポートあり）</div>
+          <div class="sidebar-item">任意保険（対人対物無制限）に加入いただける方</div>
+          <div class="sidebar-item">スマートフォン</div>
+          <div class="sidebar-item">経験・年齢不問・未経験歓迎、経験者優遇</div>
+          <div class="sidebar-item">インボイス登録の有無で単価は変わりません</div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h3>📍 対応エリア</h3>
+        <div class="sidebar-list">
+          <div class="sidebar-item">大田区・品川区・目黒区・港区</div>
+          <div class="sidebar-item">神奈川県・埼玉県・千葉県</div>
+          <div class="sidebar-item">上記以外もご相談ください</div>
+        </div>
+      </div>
+
+      <div class="sidebar-cta">
+        <p>まずは話を聞くだけでもOK。<br>左のフォームからご連絡ください。<br>お急ぎの方はお電話でも承ります。</p>
+        <a href="tel:080-5010-4929">📞 080-5010-4929</a>
+      </div>
+
+      <div class="sidebar-card sidebar-noru">
+        <h3>🔍 求人サイトから応募</h3>
+        <p class="sidebar-noru-desc">ノルワークスの求人ページからもご応募いただけます。</p>
+        <a href="https://noru-works.jp/tokyo/ota-ku/detail-27121" target="_blank" class="btn-noru">
+          ノルワークスで見る →
+        </a>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">TRUST <span>LIVRAISON</span></div>
+  <p>〒146-0082 東京都大田区池上7丁目2番7号</p>
+  <p>© 2026 Trust Livraison Inc. All rights reserved.</p>
+</footer>
+
+<script src="apply.js"></script>
+</body>
+</html>

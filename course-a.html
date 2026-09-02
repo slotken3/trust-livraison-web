@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大田区Aコース 固定ルート｜1名募集｜トラストリブレゾン合同会社</title>
+<meta name="description" content="トラストリブレゾン合同会社が大田区内の固定ルートを担当する委託ドライバーを1名募集。報酬・経費・手取りをすべて公開しています。登録料・保証金0円。">
+
+<!--
+==========================================================
+  course-a.html  /  大田区Aコース 詳細ページ
+  ----------------------------------------------------
+  【メモ】募集終了時の対応
+  ・ページは削除せず、見出しを「募集は終了しました」に書き換えて残す
+  ・JSON-LD の validThrough を終了日に変更する（現在 2026-11-30）
+  ・次回募集時は datePosted を更新する
+
+  【設置手順】
+  1. 本ファイルをルートに course-a.html として配置
+  2. index.html の HERO 直下または AREA セクションに
+     <a href="course-a.html">大田区Aコース 固定ルート 1名募集</a> を追加
+  3. 下の NAV / FOOTER を index.html のものに差し替えると完全一致します
+==========================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Oswald:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics（既存サイトと同一ID） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0D92F62WRW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0D92F62WRW');
+</script>
+
+<style>
+/* ============================================
+   既存 style.css と衝突しないよう co- で名前空間化
+   カラー・フォントは既存デザイン仕様に準拠
+   ============================================ */
+.co-scope{
+  --black:#0A0A0A;
+  --red:#E8002D;
+  --yellow:#FFD600;
+  --white:#FFFFFF;
+  --gray:#9A9A9A;
+  --line:rgba(255,255,255,.14);
+  --slip:#F2F0E9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--black,#0A0A0A);
+  color:#fff;
+  font-family:"Noto Sans JP",sans-serif;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+.co-scope img{max-width:100%;display:block}
+.co-wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* ---------- NAV（index.html のものに差し替え可） ---------- */
+.co-nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,10,10,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.co-nav__in{
+  max-width:1040px;margin:0 auto;padding:13px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+}
+.co-nav__logo{
+  font-family:"Oswald",sans-serif;font-weight:700;
+  font-size:15px;letter-spacing:.14em;color:#fff;text-decoration:none;
+}
+.co-nav__logo span{color:var(--red)}
+.co-nav__cta{
+  background:var(--red);color:#fff;text-decoration:none;
+  font-weight:700;font-size:13px;padding:10px 18px;letter-spacing:.04em;
+  white-space:nowrap;
+}
+.co-nav__cta:hover{background:var(--yellow);color:var(--black)}
+
+/* ---------- 帯 ---------- */
+.co-band{
+  background:var(--red);color:#fff;text-align:center;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;
+  font-size:13px;letter-spacing:.1em;padding:9px 20px;
+}
+
+/* ---------- HERO ---------- */
+.co-hero{padding:60px 0 50px;border-bottom:1px solid var(--line)}
+.co-hero__eyebrow{
+  font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.28em;
+  color:var(--yellow);margin-bottom:18px;
+}
+.co-hero h1{
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;
+  font-size:clamp(29px,6.6vw,54px);line-height:1.32;letter-spacing:.005em;
+}
+.co-hero h1 em{font-style:normal;color:var(--red)}
+.co-hero__lede{
+  margin-top:24px;max-width:44em;color:#D6D6D6;font-size:15.5px;
+}
+.co-hero__badge{
+  display:inline-block;margin-top:28px;
+  border:2px solid var(--yellow);color:var(--yellow);
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;
+  font-size:13.5px;letter-spacing:.08em;padding:9px 18px;
+}
+
+/* ---------- セクション共通 ---------- */
+.co-sec{padding:56px 0;border-bottom:1px solid var(--line)}
+.co-sec__label{
+  font-family:"Oswald",sans-serif;font-size:11.5px;letter-spacing:.28em;
+  color:var(--red);margin-bottom:12px;
+}
+.co-sec__ttl{
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;
+  font-size:clamp(21px,4vw,30px);line-height:1.45;margin-bottom:10px;
+}
+.co-sec__note{color:var(--gray);font-size:13.5px;margin-bottom:30px}
+
+/* ---------- 手取り明細（伝票の質感を残す） ---------- */
+.co-slip{
+  background:var(--slip);color:#111;
+  padding:30px 22px 24px;
+  box-shadow:14px 14px 0 var(--red);
+  max-width:600px;
+}
+.co-slip__ttl{
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:18px;
+  border-bottom:3px solid #111;padding-bottom:11px;
+}
+.co-slip__lead{font-size:12.5px;color:#555;margin:13px 0 18px;line-height:1.8}
+.co-slip__line{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  padding:10px 0;border-bottom:1px dotted #B9B6AB;
+}
+.co-slip__line span:first-child{font-size:13.5px;color:#444}
+.co-slip__line span:last-child{font-family:"Oswald",sans-serif;font-size:16px;letter-spacing:.02em}
+.co-slip__line--minus span:last-child{color:var(--red)}
+.co-slip__total{
+  display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  margin-top:16px;padding-top:16px;border-top:3px solid #111;
+}
+.co-slip__total span:first-child{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:15px}
+.co-slip__total span:last-child{font-family:"Oswald",sans-serif;font-weight:700;font-size:30px}
+.co-slip__foot{font-size:11.5px;color:#666;margin-top:16px;line-height:1.8}
+
+/* ---------- 明細テーブル ---------- */
+.co-rows{border-top:1px solid var(--line)}
+.co-row{
+  display:flex;gap:16px;align-items:baseline;
+  padding:15px 0;border-bottom:1px solid var(--line);
+}
+.co-row__k{
+  flex:0 0 7em;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;
+  font-size:12.5px;letter-spacing:.06em;color:var(--yellow);
+}
+.co-row__v{flex:1;font-size:14.5px;color:#E4E4E4}
+.co-row__v b{font-family:"Oswald",sans-serif;font-weight:700;font-size:19px;color:#fff}
+@media(max-width:520px){
+  .co-row{flex-direction:column;gap:3px}
+  .co-row__k{flex:none}
+}
+
+/* ---------- 働き方プラン ---------- */
+.co-plans{display:grid;gap:14px;margin-bottom:26px}
+@media(min-width:780px){.co-plans{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:780px){.co-plans--two{grid-template-columns:repeat(2,1fr)}}
+.co-more{border:1px solid var(--line);margin-bottom:26px}
+.co-more summary{
+  cursor:pointer;list-style:none;position:relative;
+  padding:16px 40px 16px 18px;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:14.5px;
+  color:var(--gray);
+}
+.co-more summary::-webkit-details-marker{display:none}
+.co-more summary::after{
+  content:"+";position:absolute;right:16px;top:14px;
+  font-family:"Oswald",sans-serif;font-size:20px;color:var(--red);line-height:1;
+}
+.co-more[open] summary{color:#fff;border-bottom:1px solid var(--line)}
+.co-more[open] summary::after{content:"–"}
+.co-more__body{padding:18px}
+.co-more__body p{font-size:13.5px;color:#C6C6C6;margin-bottom:12px;line-height:1.9}
+.co-more__body p:last-child{margin-bottom:0}
+.co-more__body b{color:var(--yellow);font-weight:700}
+.co-plan{border:1px solid var(--line);padding:22px 18px}
+.co-plan--pick{border:2px solid var(--yellow);background:rgba(255,214,0,.05)}
+.co-plan__tag{
+  font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.2em;
+  color:var(--gray);margin-bottom:10px;
+}
+.co-plan--pick .co-plan__tag{color:var(--yellow)}
+.co-plan__ttl{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;font-size:17px;margin-bottom:12px}
+.co-plan__num{font-family:"Oswald",sans-serif;font-weight:700;font-size:33px;line-height:1.1}
+.co-plan__num small{font-size:14px;font-weight:400;margin-left:3px}
+.co-plan__sub{font-size:12.5px;color:var(--gray);margin:8px 0 14px}
+.co-plan__d{font-size:13.5px;color:#D2D2D2;line-height:1.85}
+.co-voice{
+  border-left:4px solid var(--red);padding:4px 0 4px 18px;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;
+  font-size:clamp(16px,3vw,20px);line-height:1.75;margin-bottom:16px;
+}
+.co-voice__by{
+  display:block;font-family:"Noto Sans JP",sans-serif;font-weight:400;
+  font-size:12.5px;color:var(--gray);margin-top:12px;
+}
+
+/* ---------- ステップ ---------- */
+.co-steps{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.co-step{background:var(--black);padding:20px 18px}
+.co-step__n{font-family:"Oswald",sans-serif;font-size:26px;color:var(--red);line-height:1}
+.co-step__t{font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:15px;margin:8px 0 5px}
+.co-step__d{font-size:13px;color:var(--gray)}
+@media(min-width:760px){.co-steps{grid-template-columns:repeat(4,1fr)}}
+
+/* ---------- FAQ ---------- */
+.co-faq details{border-bottom:1px solid var(--line)}
+.co-faq summary{
+  cursor:pointer;list-style:none;position:relative;
+  padding:17px 34px 17px 0;
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:14.5px;
+}
+.co-faq summary::-webkit-details-marker{display:none}
+.co-faq summary::after{
+  content:"+";position:absolute;right:4px;top:15px;
+  font-family:"Oswald",sans-serif;font-size:21px;color:var(--red);line-height:1;
+}
+.co-faq details[open] summary::after{content:"–"}
+.co-faq p{padding:0 0 19px;font-size:14px;color:#C6C6C6}
+
+/* ---------- CTA ---------- */
+.co-cta{background:var(--red);padding:52px 20px;text-align:center}
+.co-cta__ttl{
+  font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;
+  font-size:clamp(22px,4.6vw,32px);line-height:1.45;
+}
+.co-cta__note{font-size:14px;margin:14px auto 28px;max-width:30em;line-height:1.85}
+.co-btn{
+  display:inline-block;background:var(--yellow);color:var(--black);
+  text-decoration:none;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:900;
+  font-size:17px;padding:17px 46px;letter-spacing:.06em;
+}
+.co-btn:hover{background:#fff}
+.co-cta__tel{
+  display:block;margin-top:20px;color:#fff;text-decoration:none;
+  font-family:"Oswald",sans-serif;font-size:21px;letter-spacing:.05em;
+}
+
+/* ---------- FOOTER ---------- */
+.co-foot{padding:40px 0 56px;font-size:12.5px;color:var(--gray);line-height:2.1}
+.co-foot a{color:var(--gray)}
+.co-foot__name{color:#fff;font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:14px}
+
+/* ---------- reveal（既存サイトと同じ挙動） ---------- */
+.co-rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.co-rv.is-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .co-rv{opacity:1;transform:none;transition:none}
+}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
+</style>
+</head>
+
+<body class="co-scope">
+
+<nav class="co-nav">
+  <div class="co-nav__in">
+    <a class="co-nav__logo" href="index.html">TRUST<span>.</span>LIVRAISON</a>
+    <a class="co-nav__cta" href="apply.html">今すぐ応募</a>
+  </div>
+</nav>
+
+<div class="co-band">大田区Aコース 固定ルート ／ 募集は1名です</div>
+
+<header class="co-hero">
+  <div class="co-wrap">
+    <p class="co-hero__eyebrow">AREA A FIXED ROUTE / 1 POSITION</p>
+    <h1>いま代表が走っているコース、<br><em>そのまま</em>お渡しします。</h1>
+    <p class="co-hero__lede">
+      このコースは現在、弊社代表が自ら配送しています。実際にどれくらいの作業量になるのか、1日で無理なく回り切れるのかを、代表自身が走って確かめているためです。所要時間も、時間指定が集中する時間帯も、置き配ができない家も、全部把握したうえでお渡しします。だから「入ってみたら話が違った」が起こりません。
+    </p>
+    <div class="co-hero__badge">登録料・保証金 0円 ／ 代表同乗研修あり</div>
+  </div>
+</header>
+
+<!-- 手取り明細 -->
+<section class="co-sec">
+  <div class="co-wrap co-rv">
+    <p class="co-sec__label">REAL NUMBERS</p>
+    <h2 class="co-sec__ttl">手取りの内訳を、先に出します。</h2>
+    <p class="co-sec__note">求人でよく見る金額は経費を引く前の売上です。実際に手元に残る額を最初に出しておきます。</p>
+
+    <div class="co-slip">
+      <div class="co-slip__ttl">東京都大田区Aコース ／ 月間収支の目安</div>
+      <p class="co-slip__lead">1個165円（消費税込）、1日130個、週5日（月22日）で計算しています。現在このコースを走っている代表の実績にもとづくもので、推定値ではありません。</p>
+
+      <div class="co-slip__line">
+        <span>報酬（21,450円 × 22日）</span><span>471,900</span>
+      </div>
+      <div class="co-slip__line co-slip__line--minus"><span>燃料費</span><span>− 30,000</span></div>
+      <div class="co-slip__line co-slip__line--minus"><span>任意保険・貨物保険</span><span>− 18,000</span></div>
+      <div class="co-slip__line co-slip__line--minus"><span>車両リース・維持費</span><span>− 45,000</span></div>
+      <div class="co-slip__line co-slip__line--minus"><span>消耗品・雑費</span><span>− 6,000</span></div>
+
+      <div class="co-slip__total"><span>手元に残る目安</span><span>372,900</span></div>
+
+      <p class="co-slip__foot">
+        車両をお持ちの方はリース分が下がるため、41万円前後になります。個数の増減で月ごとの差は出ますが、実際に走っている人間の数字なので大きくは外れません。<br><br>
+        単価は<b>開始から3か月間は160円</b>、その後165円になります。どちらも消費税込みの金額です。宅配のご経験がある方は、この期間の短縮をご相談いただけます。<br><br>
+        <b>なお、この金額から所得税・住民税・国民健康保険・年金をご自身でお納めいただきます。</b>確定申告が必要になりますので、その点も含めて面談でご説明します。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 募集要項 -->
+<section class="co-sec">
+  <div class="co-wrap co-rv">
+    <p class="co-sec__label">REQUIREMENTS</p>
+    <h2 class="co-sec__ttl">募集要項</h2>
+    <div class="co-rows">
+      <div class="co-row"><div class="co-row__k">業務</div><div class="co-row__v">軽貨物の固定ルート配送（業務委託）</div></div>
+      <div class="co-row"><div class="co-row__k">エリア</div><div class="co-row__v">東京都大田区内（詳細は面談でお伝えします）</div></div>
+      <div class="co-row"><div class="co-row__k">個数</div><div class="co-row__v"><b>120-140</b> 個 ／ 日</div></div>
+      <div class="co-row"><div class="co-row__k">稼働時間</div><div class="co-row__v"><b>9:00</b> 着車 ／ <b>20:00</b> 前後 完了（平均）／ 遅くとも <b>22:00</b> 帰車<br><span style="color:#9A9A9A;font-size:13px">19時から21時の時間帯指定があるため、その荷物が終わり次第の終了です。朝の集合が9時なので、早起きは必要ありません。</span></div></div>
+      <div class="co-row"><div class="co-row__k">稼働日</div><div class="co-row__v">週5日</div></div>
+      <div class="co-row"><div class="co-row__k">報酬</div><div class="co-row__v">完全出来高 <b>165</b> 円 ／ 個（消費税込）　1日130個で日額21,450円<br><span style="color:#9A9A9A;font-size:13px">開始から3か月間は160円（消費税込）、その後165円になります。インボイス登録の有無で金額は変わりません。</span></div></div>
+      <div class="co-row"><div class="co-row__k">支払</div><div class="co-row__v">月末締め ／ <b>翌月末</b>払い　振込手数料は当社負担</div></div>
+      <div class="co-row"><div class="co-row__k">経験者</div><div class="co-row__v">宅配・配送のご経験がある方は優遇します。初期単価の期間短縮など、実績に応じてご相談ください。</div></div>
+      <div class="co-row"><div class="co-row__k">初期費用</div><div class="co-row__v">登録料・保証金ともに <b>0</b> 円。金銭をお預かりすることはありません</div></div>
+      <div class="co-row"><div class="co-row__k">研修</div><div class="co-row__v">代表同乗で3日から5日。納得いくまで延長します</div></div>
+      <div class="co-row"><div class="co-row__k">応募資格</div><div class="co-row__v">普通自動車免許（AT限定可）／ 軽貨物車両（黒ナンバー）をお持ちの方または取得予定の方 ／ 任意保険（対人対物無制限）に加入いただける方 ／ スマートフォン</div></div>
+      <div class="co-row"><div class="co-row__k">募集人数</div><div class="co-row__v">1名</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- お約束 -->
+<section class="co-sec">
+  <div class="co-wrap co-rv">
+    <p class="co-sec__label">OUR TERMS</p>
+    <h2 class="co-sec__ttl">聞きにくいことほど、先に書きます。</h2>
+    <div class="co-rows">
+      <div class="co-row"><div class="co-row__k">休みのこと</div><div class="co-row__v">当日の体調不良でも、代表がヘルプに入ってコースを回します。ペナルティはありません。1日も休めない働き方にはなりません。</div></div>
+      <div class="co-row"><div class="co-row__k">お金のこと</div><div class="co-row__v">単価と控除の内訳を毎月お渡しします。あとから引かれる不明な費目はありません。</div></div>
+      <div class="co-row"><div class="co-row__k">インボイス</div><div class="co-row__v">登録の有無で単価は変えません。未登録の方も165円（消費税込）のままご応募いただけます。</div></div>
+      <div class="co-row"><div class="co-row__k">掛け持ち</div><div class="co-row__v">稼働日が競合しなければ、他社案件との掛け持ちも可能です。専属は強制しません。</div></div>
+      <div class="co-row"><div class="co-row__k">契約</div><div class="co-row__v">業務委託契約を電子契約で締結します。控えはお手元に残ります。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 働き方の設計 -->
+<section class="co-sec">
+  <div class="co-wrap co-rv">
+    <p class="co-sec__label">DESIGN YOUR OWN</p>
+    <h2 class="co-sec__ttl">このコースが合わなければ、<br>働き方のほうから組み立てます。</h2>
+    <p class="co-sec__note">東京都大田区Aコースは選択肢のひとつです。「何時から何時まで、週何日、いくら欲しいか」を先に教えてください。当社が持っているコースの中から合うものを割り当てます。</p>
+
+    <p class="co-voice">
+      うちがおすすめしているのは、月40万円くらいのバランスです。数字を大きく見せて短期間で辞めていただくより、長く走っていただくほうがお互いにとって良いと思っています。<span class="co-voice__by">代表社員　松村 賢治</span>
+    </p>
+
+    <div class="co-plans co-plans--two">
+      <div class="co-plan co-plan--pick">
+        <div class="co-plan__tag">THIS COURSE</div>
+        <div class="co-plan__ttl">東京都大田区Aコース</div>
+        <div class="co-plan__num">47.1<small>万円 / 月</small></div>
+        <p class="co-plan__sub">週5日 ／ 1日130個前後</p>
+        <p class="co-plan__d">今回募集している枠です。手取りは37万円前後、車両をお持ちなら41万円前後。週に2日休めるので、体力的にも生活のリズム的にも続けやすい水準です。</p>
+      </div>
+
+      <div class="co-plan">
+        <div class="co-plan__tag">LIGHT</div>
+        <div class="co-plan__ttl">もう少し抑える</div>
+        <div class="co-plan__num">41.7<small>万円 / 月</small></div>
+        <p class="co-plan__sub">週5日 ／ 1日115個前後</p>
+        <p class="co-plan__d">手取りは32万円前後。個数の少ないコースをご希望の場合は、こちらの水準でお探しします。</p>
+      </div>
+    </div>
+
+    <details class="co-more">
+      <summary>月70万円を目指したい方へ</summary>
+      <div class="co-more__body">
+        <p>結論から言うと、届きます。ただし<b>週6日稼働が前提</b>になります。1日165個前後を月26日走り切って月70.8万円、手取りで60万円前後です。</p>
+        <p>これは<b>必死にやらないと出ない数字</b>です。休みは月4日、体調を崩さずに走り続けることが条件になります。実際に到達している人はいますが、誰にでもすすめられる働き方ではありません。</p>
+        <p>それでも目指したいという方には、週6日で個数の多いコースを優先的にお回しします。面談で稼働の実態を包み隠さずお伝えしたうえで、ご判断ください。<b>数ヶ月で消耗して辞めてしまうのが、お互いにとって一番よくない結果</b>だと考えています。</p>
+      </div>
+    </details>
+
+    <div class="co-rows">
+      <div class="co-row"><div class="co-row__k">まず相談</div><div class="co-row__v">希望の時間帯・稼働日数・目標収入をお聞かせください。合うコースをこちらで探します。</div></div>
+      <div class="co-row"><div class="co-row__k">注意点</div><div class="co-row__v">保険料と車両費は稼働量に関係なくかかるため、稼働が少なすぎると手取りの効率が落ちます。週4日以下をご希望の場合は、成立するかを一緒に計算します。</div></div>
+      <div class="co-row"><div class="co-row__k">変更</div><div class="co-row__v">稼働を始めたあとでも、生活が変わればコースの組み替えを相談できます。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 選考の流れ -->
+<section class="co-sec">
+  <div class="co-wrap co-rv">
+    <p class="co-sec__label">STEPS</p>
+    <h2 class="co-sec__ttl">応募から稼働まで、約1週間。</h2>
+    <div class="co-steps">
+      <div class="co-step"><div class="co-step__n">01</div><div class="co-step__t">応募</div><div class="co-step__d">24時間以内に代表からお電話します</div></div>
+      <div class="co-step"><div class="co-step__n">02</div><div class="co-step__t">面談</div><div class="co-step__d">30分。条件はこの場ですべてお伝えします</div></div>
+      <div class="co-step"><div class="co-step__n">03</div><div class="co-step__t">契約</div><div class="co-step__d">業務委託契約を電子契約で締結</div></div>
+      <div class="co-step"><div class="co-step__n">04</div><div class="co-step__t">研修</div><div class="co-step__d">代表同乗でルートを引き継ぎ</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="co-sec co-faq">
+  <div class="co-wrap co-rv">
+    <p class="co-sec__label">Q &amp; A</p>
+    <h2 class="co-sec__ttl">よくあるご質問</h2>
+    <p class="co-sec__note">ここに書いてあることと違う話は、面談でも出てきません。</p>
+
+    <details><summary>未経験でも応募できますか。</summary>
+    <p>できます。現在このコースを走っているのは代表本人です。ルートの回り方、時間指定が集中する時間帯、置き配の可否まで、同乗しながらお伝えします。3日から5日を目安にしていますが、不安があれば延長します。</p></details>
+
+    <details><summary>何時に終わりますか。遅くなりますか。</summary>
+    <p>9時着車、平均して20時ごろに配り終えています。19時から21時の時間帯指定が入るため、その荷物が終わり次第の終了です。指定が多い日でも22時までには帰車しています。夜型の方、朝が苦手な方に向いたコースです。逆に、夕方以降の時間を確保したい方には向きません。</p></details>
+
+    <details><summary>週5日より少なく働くことはできますか。</summary>
+    <p>ご相談ください。東京都大田区Aコースは週5日ですが、当社が持っているコースの中から合うものをお探しします。ただし保険料と車両費は稼働量に関係なくかかるため、週4日以下の場合は成立するかどうかを一緒に計算させてください。車両をお持ちの方であれば選択肢が広がります。</p></details>
+
+    <details><summary>単価はいくらですか。途中で変わりますか。</summary>
+    <p>1個165円（消費税込）です。ただし開始から3か月間は160円（消費税込）とさせていただき、その後165円になります。ルートに慣れるまでの期間の設定で、達成条件のようなものはありません。3か月が過ぎれば自動的に165円です。単価が下がることはありません。宅配・配送のご経験がある方は、この3か月の短縮をご相談いただけます。</p></details>
+
+    <details><summary>インボイスの登録は必要ですか。</summary>
+    <p>必要ありません。登録済みの方も未登録の方も、お支払いする単価は同じ165円（消費税込）です。当社は簡易課税を選択しているため、ドライバーの登録有無によって当社の負担が変わらないためです。登録番号をお持ちの場合は契約時にお知らせください。</p></details>
+
+    <details><summary>本当に月70万円稼げますか。</summary>
+    <p>週6日稼働で1日165個前後を走り切れば届きます。ただし相当に走り込む前提の数字で、誰にでもすすめる働き方ではありません。今回募集している東京都大田区Aコースは週5日で、月47万円前後の水準です。無理な数字を提示して短期間で辞めていただくより、長く走っていただくほうがお互いにとって良いと思っています。</p></details>
+
+    <details><summary>初期費用や保証金はかかりますか。</summary>
+    <p>一切かかりません。登録料、保証金、研修費、いずれも0円です。金銭をお預かりすることはありません。</p></details>
+
+    <details><summary>車を持っていません。</summary>
+    <p>ご相談ください。軽貨物車両のリース・レンタル業者をご紹介できます。黒ナンバーの取得手続きについてもご案内します。</p></details>
+
+    <details><summary>報酬はいつ支払われますか。</summary>
+    <p>月末締めの翌月末払いです。振込手数料は当社が負担します。</p></details>
+
+    <details><summary>急に休みたい日が出たらどうなりますか。</summary>
+    <p>前日までにご連絡いただければ調整します。当日の体調不良でも、代表がヘルプに入ってコースを回します。ペナルティはありません。</p></details>
+
+    <details><summary>他社の仕事と掛け持ちできますか。</summary>
+    <p>可能です。このコースの稼働日と競合しないことだけご確認ください。</p></details>
+
+    <details><summary>事故を起こしたらどうなりますか。</summary>
+    <p>まず当社にご連絡ください。対応を一緒に行います。貨物の破損は貨物保険での対応が原則です。そのため任意保険（対人対物無制限）と貨物保険への加入を必須としています。</p></details>
+
+    <details><summary>どんな会社ですか。</summary>
+    <p>トラストリブレゾン合同会社、2022年6月設立。東京都大田区池上を拠点とする貨物軽自動車運送事業者です。小規模なので、担当者ではなく代表が直接お話しします。</p></details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="co-cta">
+  <p class="co-cta__ttl">まずは、話だけでも。</p>
+  <p class="co-cta__note">「条件だけ聞きたい」で構いません。その場で応募を決めていただく必要はありません。</p>
+  <a class="co-btn" href="apply.html">応募フォームへ進む</a>
+  <a class="co-cta__tel" href="tel:080-5010-4929">080-5010-4929</a>
+</section>
+
+<footer class="co-foot">
+  <div class="co-wrap">
+    <div class="co-foot__name">トラストリブレゾン合同会社</div>
+    〒146-0082 東京都大田区池上7丁目2番7号<br>
+    代表社員 松村 賢治 ／ 貨物軽自動車運送事業<br>
+    <a href="apply.html">お問い合わせ・ご応募フォーム</a><br>
+    <a href="index.html#policies">情報セキュリティ基本方針</a> ／
+    <a href="index.html#policies">個人情報取扱方針</a><br>
+    <span style="opacity:.6">&copy; Trust Livraison Inc.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.co-rv');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('is-in')});
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
+    });
+  },{threshold:.12});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"JobPosting",
+  "title":"軽貨物 委託ドライバー（大田区Aコース 固定ルート）",
+  "description":"東京都大田区内の固定ルート配送。作業量を確かめるため現在は代表が自ら走っているコースの引き継ぎです。1個165円（消費税込、開始3か月は160円）。月末締め翌月末払い。登録料・保証金は0円。経験者優遇。募集は1名。",
+  "employmentType":"CONTRACTOR",
+  "industry":"貨物軽自動車運送事業",
+  "totalJobOpenings":1,
+  "datePosted":"2026-08-31",
+  "validThrough":"2026-11-30",
+  "hiringOrganization":{
+    "@type":"Organization",
+    "name":"トラストリブレゾン合同会社",
+    "alternateName":"Trust Livraison Inc.",
+    "url":"https://www.trustlivraison.com/",
+    "foundingDate":"2022-06-17",
+    "address":{
+      "@type":"PostalAddress",
+      "postalCode":"146-0082",
+      "addressLocality":"大田区",
+      "streetAddress":"池上7-2-7",
+      "addressRegion":"東京都",
+      "addressCountry":"JP"
+    }
+  },
+  "jobLocation":{
+    "@type":"Place",
+    "address":{"@type":"PostalAddress","addressLocality":"大田区","addressRegion":"東京都","addressCountry":"JP"}
+  },
+  "directApply":true
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"未経験でも応募できますか。","acceptedAnswer":{"@type":"Answer","text":"できます。現在このコースを走っている代表が同乗して3日から5日引き継ぎます。不安があれば延長します。"}},
+    {"@type":"Question","name":"週5日より少なく働くことはできますか。","acceptedAnswer":{"@type":"Answer","text":"ご相談ください。東京都大田区Aコースは週5日ですが、他のコースからお探しします。保険料と車両費は稼働量に関係なくかかるため、週4日以下の場合は成立するかを一緒に計算します。"}},
+    {"@type":"Question","name":"単価はいくらですか。","acceptedAnswer":{"@type":"Answer","text":"1個165円（消費税込）です。開始から3か月間は160円（消費税込）とし、その後165円になります。経験者は期間短縮の相談が可能です。インボイス登録の有無で単価は変わりません。"}},
+    {"@type":"Question","name":"報酬はいつ支払われますか。","acceptedAnswer":{"@type":"Answer","text":"月末締めの翌月末払いです。振込手数料は当社が負担します。"}},
+    {"@type":"Question","name":"本当に月70万円稼げますか。","acceptedAnswer":{"@type":"Answer","text":"週6日稼働で1日165個前後を走り切れば届きますが、相当に走り込む前提の数字です。今回募集している東京都大田区Aコースは週5日で月47万円前後の水準です。"}},
+    {"@type":"Question","name":"初期費用や保証金はかかりますか。","acceptedAnswer":{"@type":"Answer","text":"かかりません。登録料・保証金・研修費はいずれも0円です。金銭をお預かりすることはありません。"}},
+    {"@type":"Question","name":"車を持っていなくても応募できますか。","acceptedAnswer":{"@type":"Answer","text":"軽貨物車両のリース・レンタル業者をご紹介できます。黒ナンバーの取得手続きもご案内します。"}},
+    {"@type":"Question","name":"インボイスの登録は必要ですか。","acceptedAnswer":{"@type":"Answer","text":"必要ありません。登録済みでも未登録でも単価は同じ165円（消費税込）です。"}},
+    {"@type":"Question","name":"急に休みたい日が出たらどうなりますか。","acceptedAnswer":{"@type":"Answer","text":"当日の体調不良でも代表がヘルプに入ってコースを回します。ペナルティはありません。"}},
+    {"@type":"Question","name":"トラストリブレゾン合同会社とはどんな会社ですか。","acceptedAnswer":{"@type":"Answer","text":"2022年6月設立、東京都大田区池上を拠点とする貨物軽自動車運送事業者です。代表社員は松村賢治。"}}
+  ]
+}
+</script>
+
+</body>
+</html>
